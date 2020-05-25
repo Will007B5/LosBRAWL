@@ -6,7 +6,17 @@ function getPeople() {
 
 async function displayList() {
   const people = await getPeople();
-  console.log(people);
+  people.forEach((person, index) => {
+    console.log(person);
+    document.querySelector('#tbody').innerHTML += `
+    <tr>
+      <th scope="row">
+        <a href="detalle.html?id=${index + 1}">
+          ${person.name}
+        </a>
+      </th>
+    </tr>`;
+  });
 }
 
 function main() {

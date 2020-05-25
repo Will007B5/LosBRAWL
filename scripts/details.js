@@ -12,6 +12,7 @@ async function displayPerson(id) {
   const person = await getPerson(id);
   const homeWorld = await getHomeWorld(person.homeworld);
   document.querySelector('#name').value = person.name;
+  document.querySelector('#height').value = person.height;
   document.querySelector('#mass').value = person.mass;
   document.querySelector('#hair_color').value = person.hair_color;
   document.querySelector('#skin_color').value = person.skin_color;
